@@ -12,9 +12,8 @@ const OrderPlace = () => {
         const telephone = telePhoneRef.current.value;
         const address = addressRef.current.value;
         const newUser = { name: name, email: email, tel: telephone, address: address };
-
         //send data to the server
-        fetch(('https://shielded-sierra-58431.herokuapp.com/services/address'), {
+        fetch('https://shielded-sierra-58431.herokuapp.com/address', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -23,7 +22,10 @@ const OrderPlace = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert('Your Order Place Successfully');
+                if (data.insertedId) {
+                    alert('sucessfully added user')
+                    e.target.reset()
+                }
             })
         e.preventDefault()
     }
@@ -31,15 +33,15 @@ const OrderPlace = () => {
         <div className='text-center border border-2  border-danger my-5 w-50 p-3' style={{ margin: '0 auto' }} >
             <h2>Enput your address Here: </h2>
             <form onSubmit={handleOrder}>
-                <input ref={nameRef} className='mb-3' type="text" name="" id="" placeholder='Your full name' />
+                <input ref={nameRef} className='mb-3' type="text" name="" id="" placeholder='Your full name' required />
                 <br />
-                <input ref={emailRef} className='mb-3' type="email" name="" id="" placeholder='Email' />
+                <input ref={emailRef} className='mb-3' type="email" name="" id="" placeholder='Email' required />
                 <br />
-                <input ref={telePhoneRef} className='mb-3' type="tel" name="" id="" placeholder='Phone' />
+                <input ref={telePhoneRef} className='mb-3' type="tel" name="" id="" placeholder='Phone' required />
                 <br />
-                <input ref={addressRef} className='mb-3' type="text" name="" id="" placeholder='Your address' />
+                <input ref={addressRef} className='mb-3' type="text" name="" id="" placeholder='Your address' required />
                 <br />
-                <input className='mb-3' type="button" value="Submit" />
+                <input className='mb-3' type="submit" value="Submit" />
             </form>
         </div>
     );

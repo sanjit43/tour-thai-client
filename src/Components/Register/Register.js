@@ -1,8 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import initializeAuthentication from '../../Firebase/firebase.init';
+import useFirebase from '../../Hooks/useFirebase';
 
+initializeAuthentication()
 const Register = () => {
+
+    const { user } = useFirebase();
     return (
-        <div>
+        <div className='text-center'>
             <form className='text-center border border-2  border-danger my-5 w-50 p-3' style={{ margin: '0 auto' }} action="">
                 <input className='mb-3' type="text" name="" id="" placeholder='Enter your name' />
                 <br />
@@ -12,6 +18,9 @@ const Register = () => {
                 <br />
                 <input type="button" value="Register" />
             </form>
+            <Link className='pb-2' to='/login'>Already Register? Login</Link>
+            <div>--------------------------------------</div>
+
         </div>
     );
 };

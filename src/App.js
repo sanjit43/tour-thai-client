@@ -6,6 +6,7 @@ import Details from './Components/Details/Details';
 import Footer from './Components/Footer/Footer';
 import Headers from './Components/Headers/Headers';
 import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
 import OrderPlace from './Components/OrderPlace/OrderPlace';
 import Register from './Components/Register/Register';
 import Services from './Components/Services/Services';
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path='/register'>
             <Register></Register>
+          </Route>
+          <Route path='/login'>
+            <Login></Login>
           </Route>
         </Switch>
         <Footer></Footer>
