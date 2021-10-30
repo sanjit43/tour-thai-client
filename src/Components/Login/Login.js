@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import useAuth from '../../Hooks/useAuth';
 
 const Login = () => {
-    const { signInUsingGoogle } = useFirebase()
+    const { signInUsingGoogle } = useAuth();
     return (
         <div className='text-center border border-2  border-danger my-5 w-50 p-3' style={{ margin: '0 auto' }} >
             <h2>Please Login</h2>

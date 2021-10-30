@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import useAuth from '../../Hooks/useAuth';
 import logo from '../../images/logo.png'
 
 const Headers = () => {
-    const { user, logOut } = useFirebase();
+    const { user, logOut } = useAuth();
 
     return (
         <div className='d-flex justify-content-center bg-primary'>

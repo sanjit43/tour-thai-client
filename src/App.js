@@ -10,44 +10,47 @@ import Login from './Components/Login/Login';
 import OrderPlace from './Components/OrderPlace/OrderPlace';
 import Register from './Components/Register/Register';
 import Services from './Components/Services/Services';
+import AuthProvider from './ContextApi/AuthProvider';
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Headers></Headers>
-        <Switch>
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
-          <Route exact path='/services'>
-            <Services></Services>
-          </Route>
-          <Route path='/services/:id'>
-            <Details></Details>
-          </Route>
-          <Route path='/about'>
-            <About></About>
-          </Route>
-          <Route exact path='/service/order'>
-            <OrderPlace></OrderPlace>
-          </Route>
-          <Route path='/contact'>
-            <Contact></Contact>
-          </Route>
-          <Route path='/register'>
-            <Register></Register>
-          </Route>
-          <Route path='/login'>
-            <Login></Login>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Headers></Headers>
+          <Switch>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route exact path='/services'>
+              <Services></Services>
+            </Route>
+            <Route path='/services/:id'>
+              <Details></Details>
+            </Route>
+            <Route path='/about'>
+              <About></About>
+            </Route>
+            <Route exact path='/service/order'>
+              <OrderPlace></OrderPlace>
+            </Route>
+            <Route path='/contact'>
+              <Contact></Contact>
+            </Route>
+            <Route path='/register'>
+              <Register></Register>
+            </Route>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </BrowserRouter>
 
+      </AuthProvider>
     </div>
   );
 }
