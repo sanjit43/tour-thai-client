@@ -8,6 +8,7 @@ import Headers from './Components/Headers/Headers';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import OrderPlace from './Components/OrderPlace/OrderPlace';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Register from './Components/Register/Register';
 import Services from './Components/Services/Services';
 import AuthProvider from './ContextApi/AuthProvider';
@@ -34,9 +35,9 @@ function App() {
             <Route path='/about'>
               <About></About>
             </Route>
-            <Route exact path='/service/order'>
+            <PrivateRoute path='/placeOrder'>
               <OrderPlace></OrderPlace>
-            </Route>
+            </PrivateRoute>
             <Route path='/contact'>
               <Contact></Contact>
             </Route>

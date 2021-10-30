@@ -19,7 +19,7 @@ const Details = () => {
                 <img style={{ width: '300px' }} src={serviceDetail.image} alt="" />
                 <h2>{serviceDetail.name}</h2>
                 <p>{serviceDetail.Description}</p>
-                <Link to='/service/order'><button className='btn btn-primary'>Place Your Order</button></Link>
+                <Link to='/placeOrder'><button className='btn btn-primary'>Place Your Order</button></Link>
             </div>
         </div>
     );
