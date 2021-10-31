@@ -12,7 +12,7 @@ const MyOrders = () => {
     }, [])
     return (
         <div>
-            <h2 className='text-center mt-5'>Order and Details:</h2>
+            <h2 className='text-center mt-5 fw-bold'>Order and Details:</h2>
             <div className='row container m-5 border border-2 border-success p-5'>
                 {
                     orders.map(order => <TotalOrder key={order._id} order={order}></TotalOrder>)
