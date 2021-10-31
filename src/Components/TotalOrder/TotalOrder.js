@@ -6,17 +6,20 @@ const TotalOrder = (props) => {
     //Delete orders
     const handleDelete = id => {
         const url = `https://shielded-sierra-58431.herokuapp.com/address/${id}`
-        console.log('clicked')
-        console.log(url)
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    alert('Deleted successfully')
-                }
+
+        const proceed = window.confirm('Are you sure you want to delete');
+        if (proceed) {
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Deleted successfully')
+                    }
+                })
+        }
+
     }
     return (
         <div className='col-md-4 p-2'>
