@@ -7,9 +7,9 @@ const Service = (props) => {
     const url = `/services/${_id}`
     return (
         <div className='col-md-4 text-center'>
-            <div className="card-group">
+            <div className="card-group my-3">
                 <div className="card">
-                    <img src={image} className="card-img-top" alt="..." />
+                    <img src={image} className="card-img-top p-2" style={{ height: '400px' }} alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{name}</h5>
                         <p className="card-text">{Description}</p>
