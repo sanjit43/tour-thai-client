@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 import Headers from './Components/Headers/Headers';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
+import MyOrders from './Components/MyOrders/MyOrders';
 import OrderPlace from './Components/OrderPlace/OrderPlace';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Register from './Components/Register/Register';
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <PrivateRoute path='/placeOrder'>
               <OrderPlace></OrderPlace>
+            </PrivateRoute>
+            <PrivateRoute path='/orders'>
+              <MyOrders></MyOrders>
             </PrivateRoute>
             <Route path='/contact'>
               <Contact></Contact>

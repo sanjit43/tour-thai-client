@@ -15,6 +15,7 @@ const Headers = () => {
                     <div className="me-auto ">
                         <Link className='fw-bold text-white mx-3 text-decoration-none' to="/home">Home</Link>
                         <Link className='fw-bold text-white mx-3 text-decoration-none' to="/services">Services</Link>
+                        {user?.email && <Link className='fw-bold text-white mx-3 text-decoration-none' to="/orders">My Orders</Link>}
                         <Link className='fw-bold text-white mx-3 text-decoration-none' to="/about">About</Link>
                         <Link className='fw-bold text-white mx-3 text-decoration-none' to="/contact">Contact</Link>
                         <Link className='fw-bold text-white mx-3 text-decoration-none bg-warning p-1 rounded' to='/register'>Register</Link>
