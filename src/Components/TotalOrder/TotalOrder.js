@@ -5,7 +5,9 @@ const TotalOrder = (props) => {
 
     //Delete orders
     const handleDelete = id => {
-        const url = `https://shielded-sierra-58431.herokuapp.com/address${id}`
+        const url = `https://shielded-sierra-58431.herokuapp.com/address/${id}`
+        console.log('clicked')
+        console.log(url)
         fetch(url, {
             method: 'DELETE'
         })
